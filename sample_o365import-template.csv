@@ -1,3 +1,0 @@
-Name,IP Ranges,DNS Searches,ICMP enabled (Optional),Allowed Ports & Protocols,Connector Zone,Tags (Optional)
-Enter name,"Enter IP ranges / CIDRs to include separated by “;”","Enter DNS searches to include separated by “;”",Enter true if want to enable ICMP,"Enter list of port ranges & protocols, separated by “;”",Enter connector zone name,"Enter tags if you want, separated by “;”"
-myrange,10.0.0.0/24; 20.0.0.0/16, *.acme.com; *.acme.net,true,1-10; 15:tcp; 21-30:udp,Default Connector Zone,tag1; tag2
