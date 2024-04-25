@@ -13,4 +13,13 @@
 
 
 ## data
-* Samples included - a json o365 json sample, and manual bulk import to Axis.
+Samples included under samples/:
+* an o365 json sample
+* a manual bulk import, for network range, to Axis.
+
+
+python scripts:
+* o365_GetSources.py: Downloads and stores the o365 definitions on json format - file samples/sample_365Source.json
+* o365.py:  Function source code to transpose, deduplicate, and build an axis bulk import for network rnage
+
+Future state: Automate using the Axis Application API
