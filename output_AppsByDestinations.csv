@@ -1,0 +1,355 @@
+id,category,name,destination,tcpPorts,udpPorts,required,notes
+1,Optimize,Exchange Online,outlook.cloud.microsoft,"80,443",443,True,
+1,Optimize,Exchange Online,outlook.office.com,"80,443",443,True,
+1,Optimize,Exchange Online,outlook.office365.com,"80,443",443,True,
+1,Optimize,Exchange Online,13.107.6.152/31,"80,443",443,True,
+1,Optimize,Exchange Online,13.107.18.10/31,"80,443",443,True,
+1,Optimize,Exchange Online,13.107.128.0/22,"80,443",443,True,
+1,Optimize,Exchange Online,23.103.160.0/20,"80,443",443,True,
+1,Optimize,Exchange Online,40.96.0.0/13,"80,443",443,True,
+1,Optimize,Exchange Online,40.104.0.0/15,"80,443",443,True,
+1,Optimize,Exchange Online,52.96.0.0/14,"80,443",443,True,
+1,Optimize,Exchange Online,131.253.33.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,132.245.0.0/16,"80,443",443,True,
+1,Optimize,Exchange Online,150.171.32.0/22,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+1,Optimize,Exchange Online,204.79.197.215/32,"80,443",443,True,
+2,Allow,Exchange Online,outlook.office365.com,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,smtp.office365.com,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,13.107.6.152/31,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,13.107.18.10/31,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,13.107.128.0/22,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,23.103.160.0/20,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,40.96.0.0/13,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,40.104.0.0/15,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,52.96.0.0/14,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,131.253.33.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,132.245.0.0/16,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,150.171.32.0/22,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+2,Allow,Exchange Online,204.79.197.215/32,"143, 587, 993, 995",,False,"POP3, IMAP4, SMTP Client traffic"
+8,Default,Exchange Online,*.outlook.com,"80,443",,True,
+8,Default,Exchange Online,autodiscover.*.onmicrosoft.com,"80,443",,True,
+9,Allow,Exchange Online,*.protection.outlook.com,443,,True,
+9,Allow,Exchange Online,40.92.0.0/15,443,,True,
+9,Allow,Exchange Online,40.107.0.0/16,443,,True,
+9,Allow,Exchange Online,52.100.0.0/14,443,,True,
+9,Allow,Exchange Online,52.238.78.88/32,443,,True,
+9,Allow,Exchange Online,104.47.0.0/17,443,,True,
+9,Allow,Exchange Online,104.47.0.0/17,443,,True,
+9,Allow,Exchange Online,104.47.0.0/17,443,,True,
+10,Allow,Exchange Online,*.mail.protection.outlook.com,25,,True,
+10,Allow,Exchange Online,*.mx.microsoft,25,,True,
+10,Allow,Exchange Online,40.92.0.0/15,25,,True,
+10,Allow,Exchange Online,40.107.0.0/16,25,,True,
+10,Allow,Exchange Online,52.100.0.0/14,25,,True,
+10,Allow,Exchange Online,104.47.0.0/17,25,,True,
+10,Allow,Exchange Online,104.47.0.0/17,25,,True,
+10,Allow,Exchange Online,104.47.0.0/17,25,,True,
+11,Optimize,Skype for Business Online and Microsoft Teams,13.107.64.0/18,,"3478,3479,3480,3481",True,
+11,Optimize,Skype for Business Online and Microsoft Teams,52.112.0.0/14,,"3478,3479,3480,3481",True,
+11,Optimize,Skype for Business Online and Microsoft Teams,52.122.0.0/15,,"3478,3479,3480,3481",True,
+11,Optimize,Skype for Business Online and Microsoft Teams,52.122.0.0/15,,"3478,3479,3480,3481",True,
+12,Allow,Skype for Business Online and Microsoft Teams,*.lync.com,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,*.teams.microsoft.com,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,teams.microsoft.com,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,13.107.64.0/18,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.112.0.0/14,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.122.0.0/15,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.238.119.141/32,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.244.160.207/32,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.244.160.207/32,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.244.160.207/32,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.244.160.207/32,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.244.160.207/32,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.244.160.207/32,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.244.160.207/32,"80,443",,True,
+12,Allow,Skype for Business Online and Microsoft Teams,52.244.160.207/32,"80,443",,True,
+16,Default,Skype for Business Online and Microsoft Teams,*.keydelivery.mediaservices.windows.net,443,,True,
+16,Default,Skype for Business Online and Microsoft Teams,*.streaming.mediaservices.windows.net,443,,True,
+16,Default,Skype for Business Online and Microsoft Teams,mlccdn.blob.core.windows.net,443,,True,
+17,Default,Skype for Business Online and Microsoft Teams,aka.ms,443,,True,
+18,Default,Skype for Business Online and Microsoft Teams,*.users.storage.live.com,443,,False,Federation with Skype and public IM connectivity: Contact picture retrieval
+19,Default,Skype for Business Online and Microsoft Teams,adl.windows.com,"80,443",,False,Applies only to those who deploy the Conference Room Systems
+27,Default,Skype for Business Online and Microsoft Teams,*.secure.skypeassets.com,443,,True,
+27,Default,Skype for Business Online and Microsoft Teams,mlccdnprod.azureedge.net,443,,True,
+31,Optimize,SharePoint Online and OneDrive for Business,*.sharepoint.com,"80,443",,True,
+31,Optimize,SharePoint Online and OneDrive for Business,13.107.136.0/22,"80,443",,True,
+31,Optimize,SharePoint Online and OneDrive for Business,40.108.128.0/17,"80,443",,True,
+31,Optimize,SharePoint Online and OneDrive for Business,52.104.0.0/14,"80,443",,True,
+31,Optimize,SharePoint Online and OneDrive for Business,104.146.128.0/17,"80,443",,True,
+31,Optimize,SharePoint Online and OneDrive for Business,150.171.40.0/22,"80,443",,True,
+31,Optimize,SharePoint Online and OneDrive for Business,150.171.40.0/22,"80,443",,True,
+31,Optimize,SharePoint Online and OneDrive for Business,150.171.40.0/22,"80,443",,True,
+31,Optimize,SharePoint Online and OneDrive for Business,150.171.40.0/22,"80,443",,True,
+31,Optimize,SharePoint Online and OneDrive for Business,150.171.40.0/22,"80,443",,True,
+32,Default,SharePoint Online and OneDrive for Business,ssw.live.com,443,,False,"OneDrive for Business: supportability, telemetry, APIs, and embedded email links"
+32,Default,SharePoint Online and OneDrive for Business,storage.live.com,443,,False,"OneDrive for Business: supportability, telemetry, APIs, and embedded email links"
+33,Default,SharePoint Online and OneDrive for Business,*.search.production.apac.trafficmanager.net,443,,False,SharePoint Hybrid Search - Endpoint to SearchContentService where the hybrid crawler feeds documents
+33,Default,SharePoint Online and OneDrive for Business,*.search.production.emea.trafficmanager.net,443,,False,SharePoint Hybrid Search - Endpoint to SearchContentService where the hybrid crawler feeds documents
+33,Default,SharePoint Online and OneDrive for Business,*.search.production.us.trafficmanager.net,443,,False,SharePoint Hybrid Search - Endpoint to SearchContentService where the hybrid crawler feeds documents
+35,Default,SharePoint Online and OneDrive for Business,*.wns.windows.com,"80,443",,True,
+35,Default,SharePoint Online and OneDrive for Business,admin.onedrive.com,"80,443",,True,
+35,Default,SharePoint Online and OneDrive for Business,officeclient.microsoft.com,"80,443",,True,
+36,Default,SharePoint Online and OneDrive for Business,g.live.com,"80,443",,True,
+36,Default,SharePoint Online and OneDrive for Business,oneclient.sfx.ms,"80,443",,True,
+37,Default,SharePoint Online and OneDrive for Business,*.sharepointonline.com,"80,443",,True,
+37,Default,SharePoint Online and OneDrive for Business,spoprod-a.akamaihd.net,"80,443",,True,
+39,Default,SharePoint Online and OneDrive for Business,*.svc.ms,"80,443",,True,
+41,Default,Microsoft 365 Common and Office Online,*.microsoftstream.com,443,,False,Microsoft Stream
+43,Default,Microsoft 365 Common and Office Online,nps.onyx.azure.net,443,,False,Microsoft Stream 3rd party integration (including CDNs)
+44,Default,Microsoft 365 Common and Office Online,*.azureedge.net,443,,False,Microsoft Stream - unauthenticated
+44,Default,Microsoft 365 Common and Office Online,*.media.azure.net,443,,False,Microsoft Stream - unauthenticated
+44,Default,Microsoft 365 Common and Office Online,*.streaming.mediaservices.windows.net,443,,False,Microsoft Stream - unauthenticated
+45,Default,Microsoft 365 Common and Office Online,*.keydelivery.mediaservices.windows.net,443,,False,Microsoft Stream
+46,Allow,Microsoft 365 Common and Office Online,*.officeapps.live.com,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,*.online.office.com,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,office.live.com,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,13.107.6.171/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,13.107.18.15/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,13.107.140.6/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.108.0.0/14,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+46,Allow,Microsoft 365 Common and Office Online,52.244.37.168/32,"80,443",,True,
+47,Default,Microsoft 365 Common and Office Online,*.office.net,"443,80",,True,
+49,Default,Microsoft 365 Common and Office Online,*.onenote.com,443,,True,
+50,Default,Microsoft 365 Common and Office Online,*.microsoft.com,443,,False,OneNote notebooks (wildcards)
+51,Default,Microsoft 365 Common and Office Online,*cdn.onenote.net,443,,True,
+53,Default,Microsoft 365 Common and Office Online,ajax.aspnetcdn.com,443,,True,
+53,Default,Microsoft 365 Common and Office Online,apis.live.net,443,,True,
+53,Default,Microsoft 365 Common and Office Online,officeapps.live.com,443,,True,
+53,Default,Microsoft 365 Common and Office Online,www.onedrive.com,443,,True,
+56,Allow,Microsoft 365 Common and Office Online,*.auth.microsoft.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,*.msftidentity.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,*.msidentity.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,account.activedirectory.windowsazure.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,accounts.accesscontrol.windows.net,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,adminwebservice.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,api.passwordreset.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,autologon.microsoftazuread-sso.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,becws.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,ccs.login.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,clientconfig.microsoftonline-p.net,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,companymanager.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,device.login.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,graph.microsoft.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,graph.windows.net,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,login-us.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,login.microsoft.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,login.microsoftonline-p.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,login.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,login.windows.net,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,logincert.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,loginex.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,nexus.microsoftonline-p.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,passwordreset.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,provisioningapi.microsoftonline.com,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,20.20.32.0/19,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,20.190.128.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,20.231.128.0/19,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+56,Allow,Microsoft 365 Common and Office Online,40.126.0.0/18,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,*.hip.live.com,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,*.microsoftonline-p.com,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,*.microsoftonline.com,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,*.msauth.net,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,*.msauthimages.net,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,*.msecnd.net,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,*.msftauth.net,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,*.msftauthimages.net,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,*.phonefactor.net,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,enterpriseregistration.windows.net,"80,443",,True,
+59,Default,Microsoft 365 Common and Office Online,policykeyservice.dc.ad.msft.net,"80,443",,True,
+64,Allow,Microsoft 365 Common and Office Online,*.compliance.microsoft.com,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,*.protection.office.com,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,*.security.microsoft.com,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,compliance.microsoft.com,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,defender.microsoft.com,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,protection.office.com,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,security.microsoft.com,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,13.107.6.192/32,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,13.107.9.192/32,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,52.108.0.0/14,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,52.108.0.0/14,443,,True,
+64,Allow,Microsoft 365 Common and Office Online,52.108.0.0/14,443,,True,
+66,Default,Microsoft 365 Common and Office Online,*.portal.cloudappsecurity.com,443,,True,
+67,Default,Microsoft 365 Common and Office Online,*.blob.core.windows.net,443,,False,Security and Compliance Center eDiscovery export
+68,Default,Microsoft 365 Common and Office Online,firstpartyapps.oaspapps.com,443,,False,Portal and shared: 3rd party office integration. (including CDNs)
+68,Default,Microsoft 365 Common and Office Online,prod.firstpartyapps.oaspapps.com.akadns.net,443,,False,Portal and shared: 3rd party office integration. (including CDNs)
+68,Default,Microsoft 365 Common and Office Online,telemetryservice.firstpartyapps.oaspapps.com,443,,False,Portal and shared: 3rd party office integration. (including CDNs)
+68,Default,Microsoft 365 Common and Office Online,wus-firstpartyapps.oaspapps.com,443,,False,Portal and shared: 3rd party office integration. (including CDNs)
+69,Default,Microsoft 365 Common and Office Online,*.aria.microsoft.com,443,,True,
+69,Default,Microsoft 365 Common and Office Online,*.events.data.microsoft.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,*.o365weve.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,amp.azure.net,443,,True,
+70,Default,Microsoft 365 Common and Office Online,appsforoffice.microsoft.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,assets.onestore.ms,443,,True,
+70,Default,Microsoft 365 Common and Office Online,auth.gfx.ms,443,,True,
+70,Default,Microsoft 365 Common and Office Online,c1.microsoft.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,dgps.support.microsoft.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,docs.microsoft.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,msdn.microsoft.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,platform.linkedin.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,prod.msocdn.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,shellprod.msocdn.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,support.microsoft.com,443,,True,
+70,Default,Microsoft 365 Common and Office Online,technet.microsoft.com,443,,True,
+71,Default,Microsoft 365 Common and Office Online,*.office365.com,"443,80",,True,
+73,Default,Microsoft 365 Common and Office Online,*.aadrm.com,443,,True,
+73,Default,Microsoft 365 Common and Office Online,*.azurerms.com,443,,True,
+73,Default,Microsoft 365 Common and Office Online,*.informationprotection.azure.com,443,,True,
+73,Default,Microsoft 365 Common and Office Online,ecn.dev.virtualearth.net,443,,True,
+73,Default,Microsoft 365 Common and Office Online,informationprotection.hosting.portal.azure.net,443,,True,
+75,Default,Microsoft 365 Common and Office Online,*.sharepointonline.com,443,,False,"Graph.windows.net, Office 365 Management Pack for Operations Manager, SecureScore, Azure AD Device Registration, Forms, StaffHub, Application Insights, captcha services"
+75,Default,Microsoft 365 Common and Office Online,dc.services.visualstudio.com,443,,False,"Graph.windows.net, Office 365 Management Pack for Operations Manager, SecureScore, Azure AD Device Registration, Forms, StaffHub, Application Insights, captcha services"
+75,Default,Microsoft 365 Common and Office Online,mem.gfx.ms,443,,False,"Graph.windows.net, Office 365 Management Pack for Operations Manager, SecureScore, Azure AD Device Registration, Forms, StaffHub, Application Insights, captcha services"
+75,Default,Microsoft 365 Common and Office Online,staffhub.ms,443,,False,"Graph.windows.net, Office 365 Management Pack for Operations Manager, SecureScore, Azure AD Device Registration, Forms, StaffHub, Application Insights, captcha services"
+78,Default,Microsoft 365 Common and Office Online,*.microsoft.com,"80,443",,False,Some Office 365 features require endpoints within these domains (including CDNs). Many specific FQDNs within these wildcards have been published recently as we work to either remove or better explain our guidance relating to these wildcards.
+78,Default,Microsoft 365 Common and Office Online,*.msocdn.com,"80,443",,False,Some Office 365 features require endpoints within these domains (including CDNs). Many specific FQDNs within these wildcards have been published recently as we work to either remove or better explain our guidance relating to these wildcards.
+78,Default,Microsoft 365 Common and Office Online,*.onmicrosoft.com,"80,443",,False,Some Office 365 features require endpoints within these domains (including CDNs). Many specific FQDNs within these wildcards have been published recently as we work to either remove or better explain our guidance relating to these wildcards.
+79,Default,Microsoft 365 Common and Office Online,o15.officeredir.microsoft.com,"80,443",,True,
+79,Default,Microsoft 365 Common and Office Online,officepreviewredir.microsoft.com,"80,443",,True,
+79,Default,Microsoft 365 Common and Office Online,officeredir.microsoft.com,"80,443",,True,
+79,Default,Microsoft 365 Common and Office Online,r.office.microsoft.com,"80,443",,True,
+83,Default,Microsoft 365 Common and Office Online,activation.sls.microsoft.com,443,,True,
+84,Default,Microsoft 365 Common and Office Online,crl.microsoft.com,"80,443",,True,
+86,Default,Microsoft 365 Common and Office Online,office15client.microsoft.com,443,,True,
+86,Default,Microsoft 365 Common and Office Online,officeclient.microsoft.com,443,,True,
+89,Default,Microsoft 365 Common and Office Online,go.microsoft.com,"80,443",,True,
+91,Default,Microsoft 365 Common and Office Online,ajax.aspnetcdn.com,"80,443",,True,
+91,Default,Microsoft 365 Common and Office Online,cdn.odc.officeapps.live.com,"80,443",,True,
+92,Default,Microsoft 365 Common and Office Online,officecdn.microsoft.com,"80,443",,True,
+92,Default,Microsoft 365 Common and Office Online,officecdn.microsoft.com.edgesuite.net,"80,443",,True,
+92,Default,Microsoft 365 Common and Office Online,otelrules.azureedge.net,"80,443",,True,
+93,Default,Microsoft 365 Common and Office Online,*.virtualearth.net,"80,443",,False,ProPlus: auxiliary URLs
+93,Default,Microsoft 365 Common and Office Online,c.bing.net,"80,443",,False,ProPlus: auxiliary URLs
+93,Default,Microsoft 365 Common and Office Online,ocos-office365-s2s.msedge.net,"80,443",,False,ProPlus: auxiliary URLs
+93,Default,Microsoft 365 Common and Office Online,tse1.mm.bing.net,"80,443",,False,ProPlus: auxiliary URLs
+93,Default,Microsoft 365 Common and Office Online,www.bing.com,"80,443",,False,ProPlus: auxiliary URLs
+95,Default,Microsoft 365 Common and Office Online,*.acompli.net,443,,False,Outlook for Android and iOS
+95,Default,Microsoft 365 Common and Office Online,*.outlookmobile.com,443,,False,Outlook for Android and iOS
+96,Default,Microsoft 365 Common and Office Online,login.windows-ppe.net,443,,False,Outlook for Android and iOS: Authentication
+97,Default,Microsoft 365 Common and Office Online,account.live.com,443,,False,Outlook for Android and iOS: Consumer Outlook.com and OneDrive integration
+97,Default,Microsoft 365 Common and Office Online,login.live.com,443,,False,Outlook for Android and iOS: Consumer Outlook.com and OneDrive integration
+105,Default,Microsoft 365 Common and Office Online,www.acompli.com,443,,False,Outlook for Android and iOS: Outlook Privacy
+114,Default,Microsoft 365 Common and Office Online,*.appex-rf.msn.com,"80,443",,False,Office Mobile URLs
+114,Default,Microsoft 365 Common and Office Online,*.appex.bing.com,"80,443",,False,Office Mobile URLs
+114,Default,Microsoft 365 Common and Office Online,c.bing.com,"80,443",,False,Office Mobile URLs
+114,Default,Microsoft 365 Common and Office Online,c.live.com,"80,443",,False,Office Mobile URLs
+114,Default,Microsoft 365 Common and Office Online,d.docs.live.net,"80,443",,False,Office Mobile URLs
+114,Default,Microsoft 365 Common and Office Online,docs.live.net,"80,443",,False,Office Mobile URLs
+114,Default,Microsoft 365 Common and Office Online,partnerservices.getmicrosoftkey.com,"80,443",,False,Office Mobile URLs
+114,Default,Microsoft 365 Common and Office Online,signup.live.com,"80,443",,False,Office Mobile URLs
+116,Default,Microsoft 365 Common and Office Online,account.live.com,"80,443",,False,Office for iPad URLs
+116,Default,Microsoft 365 Common and Office Online,auth.gfx.ms,"80,443",,False,Office for iPad URLs
+116,Default,Microsoft 365 Common and Office Online,login.live.com,"80,443",,False,Office for iPad URLs
+117,Default,Microsoft 365 Common and Office Online,*.yammer.com,443,,False,Yammer
+117,Default,Microsoft 365 Common and Office Online,*.yammerusercontent.com,443,,False,Yammer
+118,Default,Microsoft 365 Common and Office Online,*.assets-yammer.com,443,,False,Yammer CDN
+121,Default,Microsoft 365 Common and Office Online,www.outlook.com,"80,443",,False,Planner: auxiliary URLs
+122,Default,Microsoft 365 Common and Office Online,eus-www.sway-cdn.com,443,,False,Sway CDNs
+122,Default,Microsoft 365 Common and Office Online,eus-www.sway-extensions.com,443,,False,Sway CDNs
+122,Default,Microsoft 365 Common and Office Online,wus-www.sway-cdn.com,443,,False,Sway CDNs
+122,Default,Microsoft 365 Common and Office Online,wus-www.sway-extensions.com,443,,False,Sway CDNs
+124,Default,Microsoft 365 Common and Office Online,sway.com,443,,False,Sway
+124,Default,Microsoft 365 Common and Office Online,www.sway.com,443,,False,Sway
+125,Default,Microsoft 365 Common and Office Online,*.entrust.net,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,*.geotrust.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,*.omniroot.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,*.public-trust.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,*.symcb.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,*.symcd.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,*.verisign.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,*.verisign.net,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,apps.identrust.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,cacerts.digicert.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,cert.int-x3.letsencrypt.org,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,crl.globalsign.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,crl.globalsign.net,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,crl.identrust.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,crl3.digicert.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,crl4.digicert.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,isrg.trustid.ocsp.identrust.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,mscrl.microsoft.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,ocsp.digicert.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,ocsp.globalsign.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,ocsp.msocsp.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,ocsp2.globalsign.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,ocspx.digicert.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,secure.globalsign.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,www.digicert.com,"80,443",,True,
+125,Default,Microsoft 365 Common and Office Online,www.microsoft.com,"80,443",,True,
+126,Default,Microsoft 365 Common and Office Online,officespeech.platform.bing.com,443,,False,"Connection to the speech service is required for Office Dictation features. If connectivity is not allowed, Dictation will be disabled."
+127,Default,Skype for Business Online and Microsoft Teams,*.skype.com,"80,443",,True,
+147,Default,Microsoft 365 Common and Office Online,*.office.com,"80,443",,True,
+147,Default,Microsoft 365 Common and Office Online,www.microsoft365.com,"80,443",,True,
+152,Default,Microsoft 365 Common and Office Online,*.microsoftusercontent.com,443,,False,These endpoints enables the Office Scripts functionality in Office clients available through the Automate tab.  This feature can also be disabled through the Office 365 Admin portal.
+153,Default,Microsoft 365 Common and Office Online,*.azure-apim.net,443,,True,
+153,Default,Microsoft 365 Common and Office Online,*.flow.microsoft.com,443,,True,
+153,Default,Microsoft 365 Common and Office Online,*.powerapps.com,443,,True,
+153,Default,Microsoft 365 Common and Office Online,*.powerautomate.com,443,,True,
+156,Default,Microsoft 365 Common and Office Online,*.activity.windows.com,443,,True,
+156,Default,Microsoft 365 Common and Office Online,activity.windows.com,443,,True,
+158,Default,Microsoft 365 Common and Office Online,*.cortana.ai,443,,True,
+159,Default,Microsoft 365 Common and Office Online,admin.microsoft.com,"80,443",,True,
+160,Default,Microsoft 365 Common and Office Online,cdn.odc.officeapps.live.com,"80,443",,True,
+160,Default,Microsoft 365 Common and Office Online,cdn.uci.officeapps.live.com,"80,443",,True,
+180,Default,Skype for Business Online and Microsoft Teams,compass-ssl.microsoft.com,443,,True,
+184,Default,Microsoft 365 Common and Office Online,*.cloud.microsoft,"443,80",,True,
+184,Default,Microsoft 365 Common and Office Online,*.static.microsoft,"443,80",,True,
+184,Default,Microsoft 365 Common and Office Online,*.usercontent.microsoft,"443,80",,True,

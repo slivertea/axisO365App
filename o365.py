@@ -7,10 +7,12 @@ import csv
 TOKEN = os.getenv('AXIS_TOKEN')
 axisUrl = "https://admin-api.axissecurity.com/api/v1.0/applications?pageSize=100&pageNumber=1"
 o365Url = "https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7"
-localo365file = "sample_o365Source.json"
-inputTemplateCSV = "axisImport_NR.csv"
-outputAppsByDestination='outputAppsByDestination.csv'
-outputFileJS='outputAppsByName.json'
+sourceO365JS = "samples/sample_o365Source.json"
+sourceAxisImport_NR = "samples/sample_axisImport_NR.csv"
+outputAxisImport_NR_CSV = "axisImport_NR.csv"
+outputAppDestinationsCSV='output_AppsByDestinations.csv'
+outputAppNamesJS='output_AppsByName.json'
+outputDuplicatesJS='output_Duplicates.json'
 apiToken = 'Bearer '+TOKEN
 payload = ""
 headers = {
@@ -24,11 +26,10 @@ headers = {
 #o365Source = (requests.request("GET", o365Url, headers=headers, data=payload).json())
 #o365SourceJS = json.dumps(o365Source)
 # Dump output to the sample file
-#with open(localo365file, 'w', encoding='utf-8') as fh:
-    #Write to file
+#with open(sourceO365JS, 'w', encoding='utf-8') as fh:
 #    json.dump(o365Source, fh, ensure_ascii=False, indent=4)
-## Collect form existing localo365file sample_o365Source.json by default
-with open(localo365file, 'r', encoding='utf-8') as fh:
+## Collect form existing sourceO365JS sample_o365Source.json by default
+with open(sourceO365JS, 'r', encoding='utf-8') as fh:
     o365Source = json.load(fh)
 
 # Breakdown the source data by destination, one row per destination
@@ -82,6 +83,7 @@ for o365Id in o365Source:
 
 
 # Define an array of the appnames to consolidate
+dupDestinations = []
 appsNameList = []
 for o365DisplayName in o365Source:
     if o365DisplayName['serviceAreaDisplayName'] in appsNameList:
@@ -94,12 +96,13 @@ appsByName = []
 for appName in appsNameList:
     appByName = {
         "ids": [], # numerical value to all MS Apps in the source.  For tracking only
-        "categorys": [], # Microsoft given category - Optimzed, Rquired/Default, Allow
+        "categories": [], # Microsoft given category - Optimzed, Rquired/Default, Allow
         "name": appName, # Detailed display name
         "destIP": [],
         "destUrl": [],
         "tcpPorts": [],
         "udpPorts": [],
+        "allPorts": [], # used for bulk import csv template
         "isIcmp": True, # Default value
         "czName": "Default Connector Zone", # Default value
         "czId": None, # applicable only in API push
@@ -112,14 +115,46 @@ for appName in appsNameList:
 
             # Append common traits
             appByName["ids"].append(o365Name["id"])
-            appByName["categorys"].append(o365Name["category"])
+            if o365Name["category"] in appByName["categories"]:
+                ()
+            else:
+                appByName["categories"].append(o365Name["category"])
 
             if "notes" in o365Name.keys():
                 appByName['notes'].append(o365Name['notes'])
             if "ips" in o365Name.keys():
-                appByName['destIP'].append(o365Name["ips"])
+                # dictionary to track duplicates - for human log readout
+                dupDestination = {
+                    "id": None,
+                    "appName": None,
+                    "category": None,
+                    "ip": None,
+                    "url": None
+                }
+                for iP in o365Name['ips']:
+                    if ":" in iP:
+                        () # Skip ipv6
+                    else:
+                        if iP in appByName['destIP']:
+                            # Add to duplicates
+                            dupDestination["id"] = o365Name["id"]
+                            dupDestination["appName"] = o365Name["serviceAreaDisplayName"]
+                            dupDestination["category"] = o365Name["category"]
+                            dupDestination["ip"] = iP
+                            dupDestinations.append(dupDestination)
+                        else:
+                            appByName['destIP'].append(iP)
             if "urls" in o365Name.keys():
-                appByName['destUrl'].append(o365Name["urls"])
+                dupDestination = {
+                    "id": None,
+                    "ip": None,
+                    "url": None
+                }
+                for url in o365Name["urls"]:
+                    # Add to duplicates
+                    ()
+                else:
+                    appByName['destUrl'].append(o365Name["urls"])
 
             # Concatenate all unique tcp ports
             if "tcpPorts" in o365Name.keys():
@@ -130,6 +165,7 @@ for appName in appsNameList:
                         ()
                     else:
                         appByName['tcpPorts'].append(tcpPort +":tcp")
+                        appByName['allPorts'].append(tcpPort +":tcp")
 
             # Concatenate all unique udp ports
             if "udpPorts" in o365Name.keys():
@@ -140,21 +176,23 @@ for appName in appsNameList:
                         ()
                     else:
                         appByName['udpPorts'].append(udpPort +":udp")
+                        appByName['allPorts'].append(udpPort +":udp")
 
                     # Teams guidence recomends adding tcp as well.
                     if (udpPort+":tcp") in appByName['tcpPorts']:
                         ()
                     else:
                         appByName['tcpPorts'].append(udpPort +":tcp")
+                        appByName['allPorts'].append(udpPort +":tcp")
 
 
     appsByName.append(appByName)
 # Dump output to the sample file
-with open(outputFileJS, 'w', encoding='utf-8') as fh:
-    #Write to file
+with open(outputAppNamesJS, 'w', encoding='utf-8') as fh:
     json.dump(appsByName, fh, ensure_ascii=False, indent=4)
-
-
+# DUmp duplicates for human error checking - not working yet
+#with open(outputDuplicatesJS, 'w', encoding='utf-8') as fh:
+    #json.dump(dupDestinations, fh, ensure_ascii=False, indent=4)
 
 
 # Dump to JSON for API automation
@@ -173,22 +211,39 @@ axisBodyTemplate = {
 "connectorZoneID": None
 }
 
-# Axis bulk import axisBodyTemplate
-importFields = []
-with open(inputTemplateCSV, 'r') as importFh:
+# import and transpose the Axis sample header row to begin a new import file
+Axis_NRdict = {}
+with open(sourceAxisImport_NR, 'r') as importFh:
     reader = csv.reader(importFh, delimiter = ',')
     for csvRow in reader:
-        importFields.append(csvRow)
+        for header in csvRow:
+            Axis_NRdict[header] = None
+        break # Only capture the header row of the sample
 # Build out the consolidated template by app display name match.
-for field in importFields:
-    ()
-
+importAxis_NRs = []
+for appByName in appsByName:
+    dict = Axis_NRdict # refresh values to None
+    dict["Name"] = appByName["name"]
+    dict["ICMP enabled (Optional)"] = True
+    dict["Connector Zone"] = appByName["czName"]
+    dict["Tags (Optional)"] = appByName["tags"]
+    dict["Allowed Ports & Protocols"] = str(appByName["allPorts"])
+    if appByName["destIP"]:
+        dict["IP Ranges"] = str(appByName["destIP"])
+    if appByName["destUrl"]:
+        dict["DNS Searches"] = str(appByName["destUrl"])
+    importAxis_NRs.append(dict)
+# Dump to CSV
+with open(outputAxisImport_NR_CSV, 'w') as csvFh:
+    writer = csv.DictWriter(csvFh, fieldnames=Axis_NRdict)
+    writer.writeheader()
+    writer.writerows(importAxis_NRs)
 
 
 
 # Dump to CSV based on destination.  For Human readability of data
 fields = appsByDestination[0].keys()
-with open(outputAppsByDestination, 'w') as csvFh:
+with open(outputAppDestinationsCSV, 'w') as csvFh:
     writer = csv.DictWriter(csvFh, fieldnames=fields)
     writer.writeheader()
     writer.writerows(appsByDestination)
