@@ -21,22 +21,25 @@ headers = {
 }
 
 
-#STEP1 - Collect existing o365 data - either online or local json input.json file
+###STEP1 - Collect existing o365 data - either online or local json input.json file
+
 ## Collect from online direct
 #o365Source = (requests.request("GET", o365Url, headers=headers, data=payload).json())
 #o365SourceJS = json.dumps(o365Source)
 # Dump output to the sample file
 #with open(sourceO365JS, 'w', encoding='utf-8') as fh:
 #    json.dump(o365Source, fh, ensure_ascii=False, indent=4)
-## Collect form existing sourceO365JS sample_o365Source.json by default
+
+## Collect form existing sourceO365JS samples/sample_o365Source.json by default
 with open(sourceO365JS, 'r', encoding='utf-8') as fh:
     o365Source = json.load(fh)
+###STEP1 - End
+
 
 # Breakdown the source data by destination, one row per destination
 appsByDestination = []
 for o365Id in o365Source:
-    #print (o365Id['serviceAreaDisplayName'], o365Id.keys())
-    # Destinations
+    # Destinations defined by either url, or IP
     # URL
     if "urls" in o365Id.keys():
         for url in o365Id['urls']:
@@ -57,6 +60,7 @@ for o365Id in o365Source:
             if "notes" in o365Id.keys():
                 appByDest['notes'] = o365Id['notes']
             appsByDestination.append(appByDest)
+
     # IP Address
     if "ips" in o365Id.keys():
         for iP in o365Id['ips']:
@@ -123,36 +127,19 @@ for appName in appsNameList:
             if "notes" in o365Name.keys():
                 appByName['notes'].append(o365Name['notes'])
             if "ips" in o365Name.keys():
-                # dictionary to track duplicates - for human log readout
-                dupDestination = {
-                    "id": None,
-                    "appName": None,
-                    "category": None,
-                    "ip": None,
-                    "url": None
-                }
+                () # Ignore if duplicate exists.
                 for iP in o365Name['ips']:
                     if ":" in iP:
                         () # Skip ipv6
                     else:
                         if iP in appByName['destIP']:
-                            # Add to duplicates
-                            dupDestination["id"] = o365Name["id"]
-                            dupDestination["appName"] = o365Name["serviceAreaDisplayName"]
-                            dupDestination["category"] = o365Name["category"]
-                            dupDestination["ip"] = iP
-                            dupDestinations.append(dupDestination)
+                            () # Ignore if duplicate exists.
                         else:
                             appByName['destIP'].append(iP)
+
             if "urls" in o365Name.keys():
-                dupDestination = {
-                    "id": None,
-                    "ip": None,
-                    "url": None
-                }
                 for url in o365Name["urls"]:
-                    # Add to duplicates
-                    ()
+                    () # Ignore if duplicate exists.
                 else:
                     appByName['destUrl'].append(o365Name["urls"])
 
@@ -187,29 +174,6 @@ for appName in appsNameList:
 
 
     appsByName.append(appByName)
-# Dump output to the sample file
-with open(outputAppNamesJS, 'w', encoding='utf-8') as fh:
-    json.dump(appsByName, fh, ensure_ascii=False, indent=4)
-# DUmp duplicates for human error checking - not working yet
-#with open(outputDuplicatesJS, 'w', encoding='utf-8') as fh:
-    #json.dump(dupDestinations, fh, ensure_ascii=False, indent=4)
-
-
-# Dump to JSON for API automation
-axisBodyTemplate = {
-"name":None,
-"type": "NetworkRange",
-"enabled": True,
-"networkRangeApplicationData": {
-        "ipRangesOrCIDRs": [],
-        "dnsSearches": [],
-        "excludedDnsSearches": [],
-        "enableICMP": True,
-        #"portsAndProtocols": ["1-10","11-20:tcp","21-30:udp","40","45:tcp"]
-        "portsAndProtocols": []
-    },
-"connectorZoneID": None
-}
 
 # import and transpose the Axis sample header row to begin a new import file
 Axis_NRdict = {}
@@ -219,29 +183,70 @@ with open(sourceAxisImport_NR, 'r') as importFh:
         for header in csvRow:
             Axis_NRdict[header] = None
         break # Only capture the header row of the sample
+
 # Build out the consolidated template by app display name match.
 importAxis_NRs = []
 for appByName in appsByName:
-    dict = Axis_NRdict # refresh values to None
+
+    # Set the header fields and key default values.
+    #  This comes from the axis bulk import csv template, defined in Axis_NRdict
+    dict = {'Name': None, 'IP Ranges': None, 'DNS Searches': None, 'ICMP enabled (Optional)': None, 'Allowed Ports & Protocols': None, 'Connector Zone': None, 'Tags (Optional)': None}
+
     dict["Name"] = appByName["name"]
     dict["ICMP enabled (Optional)"] = True
     dict["Connector Zone"] = appByName["czName"]
     dict["Tags (Optional)"] = appByName["tags"]
-    dict["Allowed Ports & Protocols"] = str(appByName["allPorts"])
+    allPorts = ";".join(appByName["allPorts"])
+    dict["Allowed Ports & Protocols"] = allPorts
+
     if appByName["destIP"]:
-        dict["IP Ranges"] = str(appByName["destIP"])
+        # each element in the ip array is a string.  join directly.
+        destIPsConcat = ";".join(appByName["destIP"])
+        dict["IP Ranges"] = destIPsConcat
+
     if appByName["destUrl"]:
-        dict["DNS Searches"] = str(appByName["destUrl"])
+        # each element in urls are an array.  Loop first, joining each nested,
+        #  then join again to bring together the nexted loops
+        destUrlsList = []
+        for urls in appByName["destUrl"]:
+            destUrls = ";".join(urls)
+            destUrlsList.append(destUrls)
+        destUrlConcat = ";".join(destUrlsList)
+        dict["DNS Searches"] = destUrlConcat
+
     importAxis_NRs.append(dict)
-# Dump to CSV
+
+
+
+
+# JSON body format for axis API Application Post
+axisBodyTemplate = {
+"name":None,
+"type": "NetworkRange",
+"enabled": True,
+"networkRangeApplicationData": {
+        "ipRangesOrCIDRs": [],
+        "dnsSearches": [],
+        "excludedDnsSearches": [],
+        "enableICMP": True,
+        #"portsAndProtocols": ["1-10","11-20:tcp","21-30:udp","40","45:tcp"],  <-- Sample
+        "portsAndProtocols": []
+    },
+"connectorZoneID": None
+}
+
+
+
+
+### FIle Creation(s)
+# Dump the importAxis_NRs array into the axis bulk import template for Network Ranges
 with open(outputAxisImport_NR_CSV, 'w') as csvFh:
     writer = csv.DictWriter(csvFh, fieldnames=Axis_NRdict)
     writer.writeheader()
     writer.writerows(importAxis_NRs)
 
 
-
-# Dump to CSV based on destination.  For Human readability of data
+# Dump AppsByDestination to CSV.  For Human readability of data
 fields = appsByDestination[0].keys()
 with open(outputAppDestinationsCSV, 'w') as csvFh:
     writer = csv.DictWriter(csvFh, fieldnames=fields)
@@ -249,6 +254,11 @@ with open(outputAppDestinationsCSV, 'w') as csvFh:
     writer.writerows(appsByDestination)
 
 
+# Dump the AppsByName in JSOn format.  For sanity checking
+with open(outputAppNamesJS, 'w', encoding='utf-8') as fh:
+    json.dump(appsByName, fh, ensure_ascii=False, indent=4)
 
 
-# Convert CSV to bulkImport
+# Dump ignored duplicates.  Uncomment for debugging, sanity checking.
+#with open(outputDuplicatesJS, 'w', encoding='utf-8') as fh:
+    #json.dump(dupDestinations, fh, ensure_ascii=False, indent=4)
