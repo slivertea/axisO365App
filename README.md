@@ -10,7 +10,14 @@
 * Document reference https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide
 * JSON source: https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7
 
-
+## Guidence
+1. run o365_GetSources.py
+2. run o365.py - builds the Axis Import csv file.
+3. Login to Atmos Management UI
+4. Navigate to Settings -> Destinations
+5. remove all applications, if existing, from tag **"ms 365 all apps"**
+6. Click the Import button, and Submit
+7. Confirm Policy permits accordingly to the **"ms 365 all apps"** tag
 
 ## data
 Samples included under samples/:
